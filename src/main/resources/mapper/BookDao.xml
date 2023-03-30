@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.library.dao.BookDao">
+
+<!--    <select id="selectByCondition" resultType="book">-->
+<!--        select *-->
+<!--        from tbl_book-->
+<!--    </select>-->
+    <select id="selectByCondition" resultType="com.library.domain.Book">
+        select *
+        from tbl_book
+        <where>
+            <if test="bookname != null and bookname != ''">
+                and bookname like #{bookname}
+            </if>
+            <if test="description != null and description != ''">
+                and description like #{description}
+            </if>
+            <if test="isbn != null and isbn != ''">
+                and isbn = #{isbn}
+            </if>
+        </where>
+    </select>
+
+
+</mapper>

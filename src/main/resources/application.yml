@@ -1,0 +1,15 @@
+#本地测试配置文件
+server:
+  port: 5000
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://113.125.103.168:3306/library
+    username: library
+    password: qweewqQWEEWQ
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+
